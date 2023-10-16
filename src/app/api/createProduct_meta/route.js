@@ -8,7 +8,7 @@ export async function POST() {
             data: {
                 key:'123-abc',
                 content:'Lorem ipsum dolor sit amet.',
-                productId:13 
+                productId:36 
               }
         })
         return NextResponse.json({status: 200, Message:"successfully created the product_meta"})

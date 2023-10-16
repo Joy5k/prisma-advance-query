@@ -12,7 +12,7 @@ export async function POST(req, res) {
                 mobile:"01923588531",
                 email: "mmehedihasanjoyv@gmail.com",
                 password:"123456"
-         }
+         },
      })
     return NextResponse.json({status: 200,message:"success"})
  } catch (error) {
