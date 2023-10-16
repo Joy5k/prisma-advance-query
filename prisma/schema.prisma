@@ -22,6 +22,7 @@ admin Int? @default(1) @db.TinyInt
   lastLogin DateTime @default(now()) @db.Timestamp @updatedAt
   createdAt DateTime @default(now()) @db.Timestamp 
   updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
+  product product[]
 
 }
 model catergory{
@@ -47,4 +48,5 @@ model product{
   createdAt DateTime @default(now()) @db.Timestamp 
   endsAt DateTime @default(now()) @db.Timestamp 
   updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
+  user user @relation(fields: [userId],references: [id],onDelete: Restrict,onUpdate: Cascade)
 }
