@@ -33,3 +33,18 @@ model catergory{
    createdAt DateTime @default(now()) @db.Timestamp 
   updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
 }
+model product{
+  id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  firstName String @db.VarChar(100)
+  metaTitle String @db.VarChar(100)
+  slug String @db.VarChar(100)
+  summary String @db.VarChar(100)
+  price Int 
+  dicount Int 
+  userId BigInt @db.UnsignedBigInt
+  publishedAt DateTime @default(now()) @db.Timestamp
+  startsAt DateTime @default(now()) @db.Timestamp 
+  createdAt DateTime @default(now()) @db.Timestamp 
+  endsAt DateTime @default(now()) @db.Timestamp 
+  updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
+}
