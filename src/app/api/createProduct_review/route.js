@@ -10,6 +10,7 @@ export async function POST() {
                 title:"Iphone 14",
                 rating:"5",
                 content: "Lorem",
+                productId:14
                
             }
         })
