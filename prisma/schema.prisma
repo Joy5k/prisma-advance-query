@@ -23,6 +23,7 @@ admin Int? @default(1) @db.TinyInt
   createdAt DateTime @default(now()) @db.Timestamp 
   updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
   product product[]
+  cart cart[]
 
 }
 model catergory{
@@ -70,4 +71,22 @@ model product_review{
   created_at DateTime @default(now()) @db.Timestamp()
   updated_at DateTime @default(now()) @db.Timestamp() @updatedAt
   product product @relation(fields: [productId],references: [id],onDelete: Restrict,onUpdate: Cascade)
+}
+model cart{
+  id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  title String @db.VarChar(100)
+  sessionId String @db.VarChar(100)
+  token String @db.VarChar(100)
+  status String @db.VarChar(100)
+  firstName String @db.VarChar(100)
+  middleName String @db.VarChar(100)
+  lastName String @db.VarChar(100)
+  mobile String @db.VarChar(100)
+  email String @db.VarChar(100)
+  city String @db.VarChar(100)
+ country String @db.VarChar(100)
+ userId BigInt @db.UnsignedBigInt
+ created_at DateTime @default(now()) @db.Timestamp()
+ updated_at DateTime @default(now()) @db.Timestamp() @updatedAt
+  user user @relation(fields: [userId],references: [id],onDelete: Restrict,onUpdate:Cascade)
 }
