@@ -21,6 +21,15 @@ admin Int? @default(1) @db.TinyInt
  registered DateTime @default(now()) @db.Timestamp
   lastLogin DateTime @default(now()) @db.Timestamp @updatedAt
   createdAt DateTime @default(now()) @db.Timestamp 
-  updatedAt DateTime @default(now()) @db.Timestamp
+  updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
 
+}
+model catergory{
+   id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  title String @db.VarChar(75)
+  metaTitle String @db.VarChar(100)
+  slug String @db.VarChar(100)
+  content String @db.Text
+   createdAt DateTime @default(now()) @db.Timestamp 
+  updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
 }
