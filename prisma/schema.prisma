@@ -50,6 +50,7 @@ model product{
   updatedAt DateTime @default(now()) @db.Timestamp @updatedAt
   user user @relation(fields: [userId],references: [id],onDelete: Restrict,onUpdate: Cascade)
   product_meta product_meta[]
+  product_review product_review[]
 }
 model product_meta{
   id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
@@ -58,5 +59,15 @@ model product_meta{
   productId BigInt @db.UnsignedBigInt
   created_at DateTime @default(now()) @db.Timestamp()
   update_at DateTime @default(now()) @db.Timestamp() @updatedAt
+  product product @relation(fields: [productId],references: [id],onDelete: Restrict,onUpdate: Cascade)
+}
+model product_review{
+  id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+  title String @db.VarChar(100)
+  rating String @db.VarChar(100)
+  content String @db.VarChar(100)
+  productId BigInt @db.UnsignedBigInt
+  created_at DateTime @default(now()) @db.Timestamp()
+  updated_at DateTime @default(now()) @db.Timestamp() @updatedAt
   product product @relation(fields: [productId],references: [id],onDelete: Restrict,onUpdate: Cascade)
 }
