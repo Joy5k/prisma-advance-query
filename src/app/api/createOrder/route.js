@@ -22,8 +22,9 @@ export async function POST() {
   mobile:"01923588531",
   email: "mmehedihasanjoyv@gmail.com",
   city: "Patuakhali",
-                country: "Bangladesh",
-                subTotal:1120,
+  country: "Bangladesh",
+ subTotal: 1120,
+  userId:1
      }
         })
         return NextResponse.json({status:200,message:"successfully created the order"})
