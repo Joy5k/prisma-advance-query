@@ -9,3 +9,18 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+model user{
+id BigInt @id @default(autoincrement()) @db.UnsignedBigInt
+firstName String @db.VarChar(100)
+middleName String @db.VarChar(100)
+lastName String @db.VarChar(100)
+mobile String @unique @db.VarChar(100)
+email String @unique @db.VarChar(100)
+password String @unique @db.VarChar(100)
+admin Int? @default(1) @db.TinyInt
+ registered DateTime @default(now()) @db.Timestamp
+  lastLogin DateTime @default(now()) @db.Timestamp @updatedAt
+  createdAt DateTime @default(now()) @db.Timestamp 
+  updatedAt DateTime @default(now()) @db.Timestamp
+
+}
