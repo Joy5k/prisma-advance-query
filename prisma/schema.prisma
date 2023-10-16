@@ -43,7 +43,7 @@ model product{
   slug String @db.VarChar(100)
   summary String @db.VarChar(100)
   price Int 
-  dicount Int 
+  discount Int 
   userId BigInt @db.UnsignedBigInt
   publishedAt DateTime @default(now()) @db.Timestamp
   startsAt DateTime @default(now()) @db.Timestamp 
